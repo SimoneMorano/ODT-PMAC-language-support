@@ -1,7 +1,7 @@
 {
   "name": "ODT PMAC",
   "scopeName": "source.odt-pmac",
-  "fileTypes": ["pmc", "pmh", "plc"],
+  "fileTypes": ["pmc", "pmh", "plc", "kin"],
   "patterns": [
     {
       "include": "#comments"
@@ -10,7 +10,10 @@
       "include": "#keywords"
     },
     {
-      "include": "#numbers"
+      "include": "#special-functions"
+    },
+    {
+      "include": "#kinematic-positions"
     },
     {
       "include": "#strings"
@@ -37,7 +40,7 @@
       "patterns": [
         {
           "name": "keyword.control.pmac",
-          "match": "\\b(if|else|while|for|return|break|continue|goto|label)\\b"
+          "match": "\\b(for|break|continue|goto|label)\\b"
         },
         {
           "name": "keyword.operator.pmac",
@@ -45,19 +48,23 @@
         },
         {
           "name": "keyword.other.pmac",
-          "match": "\\b(open|close|read|write|send|receive|clear|enable|disable)\\b"
+          "match": "\\b(read|write|send|receive|clear)\\b"
         }
       ]
     },
-    "numbers": {
+    "special-functions": {
       "patterns": [
         {
-          "name": "constant.numeric.pmac",
-          "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
-        },
+          "name": "support.function.pmac",
+          "match": "\\b(global|local|inverse|abs|if|else|open|close|return|undefine|all|plc|kill|call|homez|jog|enable|disable|start|while|abort|pmatch)\\b"
+        }
+      ]
+    },
+    "kinematic-positions": {
+      "patterns": [
         {
-          "name": "constant.numeric.hex.pmac",
-          "match": "\\b0x[0-9A-Fa-f]+\\b"
+          "name": "entity.name.function.pmac",
+          "match": "\\b(KinPosAxisX|KinPosAxisY|KinPosAxisZ|KinPosMotor1|KinPosMotor2|KinPosMotor3|KinVelEna|KinAxisUsed)\\b"
         }
       ]
     },
