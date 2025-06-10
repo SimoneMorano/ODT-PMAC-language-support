@@ -1,0 +1,107 @@
+{
+  "name": "ODT PMAC",
+  "scopeName": "source.odt-pmac",
+  "fileTypes": ["pmc", "pmh", "plc"],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#variables"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.pmac",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.pmac",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.pmac",
+          "match": "\\b(if|else|while|for|return|break|continue|goto|label)\\b"
+        },
+        {
+          "name": "keyword.operator.pmac",
+          "match": "\\b(and|or|not|xor)\\b"
+        },
+        {
+          "name": "keyword.other.pmac",
+          "match": "\\b(open|close|read|write|send|receive|clear|enable|disable)\\b"
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.pmac",
+          "match": "\\b[0-9]+(\\.[0-9]+)?\\b"
+        },
+        {
+          "name": "constant.numeric.hex.pmac",
+          "match": "\\b0x[0-9A-Fa-f]+\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.pmac",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.pmac",
+              "match": "\\\\."
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.pmac",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.pmac",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.pmac",
+          "match": "\\b[Pp][0-9]+\\b"
+        },
+        {
+          "name": "variable.other.pmac",
+          "match": "\\b[Mm][0-9]+\\b"
+        },
+        {
+          "name": "variable.other.pmac",
+          "match": "\\b[Qq][0-9]+\\b"
+        }
+      ]
+    }
+  }
+} 

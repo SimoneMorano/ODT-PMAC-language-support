@@ -1,0 +1,43 @@
+{
+  "name": "odt-pmac-language-support",
+  "displayName": "ODT PMAC Language Support",
+  "description": "Syntax highlighting and language support for Omron Delta Tau PMAC language",
+  "version": "0.0.1",
+  "publisher": "simone-morano",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "pmac",
+      "aliases": ["PMAC", "pmac"],
+      "extensions": [".pmc", ".pmh", ".plc", ".kin"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "pmac",
+      "scopeName": "source.odt-pmac",
+      "path": "./syntaxes/pmac.tmLanguage.json"
+    }]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SimoneMorano/ODT-PMAC-language-support"
+  },
+  "keywords": [
+    "pmac",
+    "delta tau",
+    "omron",
+    "syntax highlighting"
+  ],
+  "author": "Simone Morano",
+  "license": "MIT",
+  "icon": "images/omron.ico",
+  "galleryBanner": {
+    "color": "#C80000",
+    "theme": "dark"
+  }
+} 
